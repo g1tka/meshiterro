@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  root to: "homes#top"
   devise_for :users
-root to: "homes#top"
-get 'homes/about' => 'homes#about', as: 'about'
+
+  resources :post_images, only: [:new, :index, :show]
+
+  get 'homes/about' => 'homes#about', as: 'about'
 end
 
 
@@ -24,3 +27,7 @@ end
 #                            POST   /users(.:format)                devise/registrations#create
 #                       root GET    /                                              homes#top
 #                      about GET    /homes/about(.:format)                         homes#about
+
+#                post_images GET    /post_images(.:format)                   post_images#index
+#             new_post_image GET    /post_images/new(.:format)               post_images#new
+#                 post_image GET    /post_images/:id(.:format)               post_images#show
