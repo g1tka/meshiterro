@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 root to: "homes#top"
+get 'homes/about' => 'homes#about', as: 'about'
 end
 
 
@@ -12,13 +13,14 @@ end
 #          new_user_password GET    /users/password/new(.:format)       devise/passwords#new
 #         edit_user_password GET    /users/password/edit(.:format)      devise/passwords#edit
 #              user_password PATCH  /users/password(.:format)           devise/passwords#update
-#                           PUT    /users/password(.:format)            devise/passwords#update
-#                           POST   /users/password(.:format)            devise/passwords#create
+#                            PUT    /users/password(.:format)           devise/passwords#update
+#                            POST   /users/password(.:format)           devise/passwords#create
 #   cancel_user_registration GET    /users/cancel(.:format)         devise/registrations#cancel
 #      new_user_registration GET    /users/sign_up(.:format)        devise/registrations#new
 #     edit_user_registration GET    /users/edit(.:format)           devise/registrations#edit
 #          user_registration PATCH  /users(.:format)                devise/registrations#update
-#                           PUT    /users(.:format)                 devise/registrations#update
-#                           DELETE /users(.:format)                 devise/registrations#destroy
-#                           POST   /users(.:format)                 devise/registrations#create
+#                            PUT    /users(.:format)                devise/registrations#update
+#                            DELETE /users(.:format)                devise/registrations#destroy
+#                            POST   /users(.:format)                devise/registrations#create
 #                       root GET    /                                              homes#top
+#                      about GET    /homes/about(.:format)                         homes#about
