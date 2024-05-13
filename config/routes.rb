@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'homes/about' => 'homes#about', as: 'about'
   resources :post_images, only: [:new, :create, :index, :show, :destroy]
-  resources :users, only: [:show, :edit]
+  resources :users, only: [:show, :edit, :update]
 end
 
 
@@ -35,3 +35,5 @@ end
 #                            DELETE /post_images/:id(.:format)               post_images#destroy
 #                  edit_user GET    /users/:id/edit(.:format)                     users#edit
 #                       user GET    /users/:id(.:format)                          users#show
+#                            PATCH  /users/:id(.:format)                          users#update
+#                            PUT    /users/:id(.:format)                          users#update
